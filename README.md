@@ -5,7 +5,7 @@ Git is an incredible tool that can feel very intimidating for someone new. This 
 ## Table of Contents
 - [Setting up Git](#setting-up-git)
 - [Create a Repository](#create-a-repository)
-- [Stage and Commit Changes](#stage-and-commit-changes)
+- [Staging and Committing](#stage-and-commit-changes)
 - [Push to GitHub](#push-to-github)
 - [Make Changes Later](#make-changes-later)
 - [Pull Changes from GitHub](#pull-changes-from-github)
@@ -27,3 +27,33 @@ Before you can start using Git, you need to set it up on your computer. Follow t
     git config --global user.email "your@email.com"
     ```
 ## Create a Repository
+You can create a new Git repository (repo) either locally on your computer or on Github.
+### Via Git
+```bash
+mkdir my-repo-name
+cd my-repo-name
+git init
+```
+**Note**: When you run `git init`, it creates a hidden `.git` directory in your project folder. This directory contains all the necessary files and metadata for your Git repository. So don't forget to run this command!
+
+### Via GitHub
+The official Github documentation covers how to create a [repo online](https://docs.github.com/en/get-started/quickstart/create-a-repo).
+
+## Stagging and Committing Changes
+`Staging` and `committing` are going to be your two most used actions.
+When you're `staging` your telling `Git` "I want the following files to be pushed to the repo". 
+
+Let's now create a really simple `README.md`. 
+You can either use your favorite text editor or run the following command in your terminal:
+
+```bash
+echo "Hello, World!" >> README.md
+```
+
+Now, let's stage the `README.md` file:
+
+```bash
+git add README.md
+``` 
+You can stage multiple files at once by using `git add .` to stage all changes in the current directory. **BE CAREFUL** with this command, as it will stage all changes, including **deletions, modifications, and any test outputs!**
+
